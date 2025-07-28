@@ -1,0 +1,42 @@
+:root {
+    --bubble-bg-me: #007bff;
+    --bubble-bg-creator: #e9e9eb;
+    --text-color-me: white;
+    --text-color-creator: black;
+    --body-bg: #f0f2f5;
+    --card-bg: white;
+}
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 15px; background-color: var(--body-bg); }
+.container { max-width: 600px; margin: 0 auto; background-color: var(--card-bg); border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 20px; display: flex; flex-direction: column; height: calc(100vh - 30px); box-sizing: border-box; }
+h1 { font-size: 22px; color: #333; text-align: center; margin-top: 0; }
+#task-container { flex-grow: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; padding: 10px; border: 1px solid #e8e8e8; border-radius: 5px; }
+.message-entry { display: flex; flex-direction: column; }
+.message-bubble { 
+    padding: 8px 14px; 
+    border-radius: 18px; 
+    max-width: 80%; 
+    line-height: 1.5; 
+    word-wrap: break-word;
+    overflow-wrap: break-word; 
+    word-break: break-word;
+}
+.speaker-info { font-size: 12px; color: #888; margin-bottom: 4px; }
+.message-creator { align-self: flex-start; }
+.message-creator .message-bubble { background-color: var(--bubble-bg-creator); color: var(--text-color-creator); border-top-left-radius: 4px; }
+.message-creator .speaker-info { text-align: left; margin-left: 5px; }
+.message-me { align-self: flex-end; }
+.message-me .message-bubble { background-color: var(--bubble-bg-me); color: var(--text-color-me); border-top-right-radius: 4px; }
+.message-me .speaker-info { text-align: right; margin-right: 5px; }
+.chat-image { max-width: 100%; border-radius: 12px; display: block; }
+.card-content { 
+    font-size: 13px; 
+    white-space: pre-wrap; 
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+.card-content img { max-width: 150px; border-radius: 8px; margin-top: 5px; }
+#reply-area { margin-top: 20px; display: none; }
+textarea { width: 100%; box-sizing: border-box; padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; min-height: 100px; }
+button { display: block; width: 100%; padding: 12px; font-size: 16px; font-weight: bold; color: white; background-color: #20d5ec; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; transition: background-color 0.2s; }
+button:disabled { background-color: #ccc; cursor: not-allowed; }
+#status { text-align: center; color: #888; margin-top: 20px; font-size: 12px; flex-shrink: 0; }
